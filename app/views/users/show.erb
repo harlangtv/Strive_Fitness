@@ -1,0 +1,22 @@
+<h1>About this User</h1>
+
+  <body>
+  <p> <b>User Name: </b><%= "#{@user.first_name} #{@user.last_name}" %> </p>
+
+  <p> <b>User Email: </b><%= @user.email %> </p>
+
+  <%@user.schedules.each do |s|%>
+  <p>Goals : <%= link_to s.goal.name, s.goal %></p>
+<%end%><br>
+
+<p>Make a new goal : <%= link_to "new goal", new_goal_path(@user) %></p>
+
+
+
+
+
+  <p><%= link_to "Edit User", edit_user_path(@user)%></p>
+  <p><%= link_to "Go back to all users", users_path%></p>
+  <button class="ui black button"><%= button_to "Delete user", user_path(@user), method: "delete"%></button>
+
+</body>

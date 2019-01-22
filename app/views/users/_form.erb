@@ -1,0 +1,21 @@
+
+<% if !!flash[:errors]%>
+<% flash[:errors].each do |error| %>
+<p> <%= error %> </p>
+<%end%>
+<%end%>
+<body>
+<p><%= form_for @user do |f| %></p>
+<p><%= f.label :first_name %></p>
+<p><%= f.text_area :first_name %></p>
+<p><%= f.label :last_name %></p>
+<p><%= f.text_field :last_name %></p>
+<p><%= f.label :password%></p>
+<p><%= f.text_field :password%></p>
+<p><%= f.label :email%></p>
+<p><%= f.text_field :email%></p>
+<p><%= f.label :photo%></p>
+<p><%= f.text_field :photo%></p>
+<p><%= f.submit %></p>
+<%end%>
+</body>
