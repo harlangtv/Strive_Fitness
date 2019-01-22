@@ -1,0 +1,21 @@
+
+<% if !!flash[:errors]%>
+<% flash[:errors].each do |error| %>
+<p> <%= error %> </p>
+<%end%>
+<%end%>
+<body>
+<p><%= form_for @task do |f| %></p>
+<p><%= f.label :task_name %></p>
+<p><%= f.text_area :task_name %></p>
+<p><%= f.label :goal_id %></p>
+<p><%= f.text_field :goal_id %></p>
+<p><%= f.label :completed %></p>
+<p><%= f.check_box :completed %></p>
+<p><%= f.label :date %></p>
+<p><%= f.date_field :date%></p>
+<p><%= f.label :duration %></p>
+<p><%= f.text_field :duration %></p>
+<p><%= f.submit %></p>
+<%end%>
+</body>
