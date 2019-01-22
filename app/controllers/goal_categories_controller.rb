@@ -1,2 +1,4 @@
 class GoalCategoriesController < ApplicationController
+
+
 end
