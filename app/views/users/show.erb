@@ -1,4 +1,4 @@
-<h1>About this User</h1>
+<h1>Welcome back <%= @user.first_name %> </h1>
 
   <body>
   <p> <b>User Name: </b><%= "#{@user.first_name} #{@user.last_name}" %> </p>
@@ -7,7 +7,7 @@
   <p> <b>User Email: </b><%= @user.email %> </p>
 
   <%@user.goals.each do |g|%>
-  <p>Goals : <%= link_to g.goal.name, g.goal %></p>
+  <p>Goals : <%= link_to g.goal_name, g %></p>
 <%end%><br>
 
 <p>Make a new goal : <%= link_to "new goal", new_goal_path(@user) %></p>
