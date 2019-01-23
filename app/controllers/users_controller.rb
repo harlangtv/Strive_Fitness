@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  # before_action :require_login
 
     def index
       @users = User.all
-      # return head(:forbidden) unless session.include? :user_id
     end
 
     def new
@@ -16,7 +14,6 @@ class UsersController < ApplicationController
     end
 
     def create
-     # return head(:forbidden) unless session.include? :user_id
      @user= User.create(user_params)
       if @user.valid?
        redirect_to user_path(@user)
@@ -28,15 +25,14 @@ class UsersController < ApplicationController
     end
 
     def show
-      # return head(:forbidden) unless session.include? :user_id
       @goals = Goal.all
+      # authorize
     end
 
     def edit
     end
 
     def update
-      # return head(:forbidden) unless session.include? :user_id
       if @user.update(user_params)
        redirect_to user_path(@user)
       else
@@ -60,9 +56,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :photo)
     end
-
-    # def require_login
-    #    return head(:forbidden) unless session.include? :user_id
-    # end
 
 end

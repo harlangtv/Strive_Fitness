@@ -3,6 +3,9 @@ class SessionsController < ApplicationController
   def new
   end
 
+  def login
+  end
+
   def create #for logging the user in
     session[:email] = params[:session][:email]
     @user = User.find_by(email: params[:session][:email])
@@ -10,15 +13,13 @@ class SessionsController < ApplicationController
       session[:user_id]= @user.id
       redirect_to @user
     else
-      redirect_to new_user_path
+      redirect_to login_path
     end
   end
 
   def destroy
-    session.delete :email
+    session.delete (:user_id)
     redirect_to login_path
   end
-
-  
 
 end

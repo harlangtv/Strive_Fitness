@@ -26,6 +26,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @goals = Goal.all
   end
 
   def update

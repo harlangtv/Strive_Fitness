@@ -4,7 +4,7 @@
   <body>
 
   <p> <% @tasks.each do |t|%> </p>
-  <p> Task: <%= t.task_name%> </p>
+  <p> Task: <%=link_to t.task_name, t%> </p>
   <%end%>
   <br>
 
