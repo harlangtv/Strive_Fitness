@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_185823) do
+ActiveRecord::Schema.define(version: 2019_01_23_000241) do
 
   create_table "categories", force: :cascade do |t|
     t.string "goal_type"
@@ -18,11 +18,9 @@ ActiveRecord::Schema.define(version: 2019_01_22_185823) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "goal_categories", force: :cascade do |t|
-    t.integer "goal_id"
-    t.integer "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "categories_goals", id: false, force: :cascade do |t|
+    t.integer "goal_id", null: false
+    t.integer "category_id", null: false
   end
 
   create_table "goals", force: :cascade do |t|
