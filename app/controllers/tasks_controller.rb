@@ -6,11 +6,8 @@ class TasksController < ApplicationController
   end
 
   def new
-    if !!flash[:data]
-      @task = Task.new(flash[:data])
-    else
-      @task = Task.new
-    end
+    @goals = Goal.all
+    @task = Task.new
   end
 
   def create
@@ -53,6 +50,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:first_name, :last_name, :password, :email, :photo)
+    params.require(:task).permit(:task_name,:goal_id, :completed, :date,:duration)
   end
 end

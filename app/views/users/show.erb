@@ -1,22 +1,25 @@
 <h1>Welcome back <%= @user.first_name %> </h1>
 
   <body>
-  <p> <b>User Name: </b><%= "#{@user.first_name} #{@user.last_name}" %> </p>
 
-  <p> <b>User Email: </b><%= @user.email %> </p>
+    <h3> Your Fitness Goals </h3>
+      <%@user.goals.each do |g|%>
+      <ul>
+      <li><%= link_to g.goal_name, g %></li>
+      <%end%><br>
+      </ul>
 
-  <%@user.goals.each do |g|%>
-  <p>Goals : <%= link_to g.goal_name, g %></p>
-<%end%><br>
-
-<p>Make a new goal : <%= link_to "new goal", new_goal_path(@user) %></p>
-
-
+<!-- Show the user their tasks-->
 
 
 
-  <p><%= link_to "Edit User", edit_user_path(@user)%></p>
-  <p><%= link_to "Go back to all users", users_path%></p>
-  <button class="ui black button"><%= button_to "Delete user", user_path(@user), method: "delete"%></button>
+      <p><%= link_to "Make a new goal!", new_goal_path(@user) %></p><hr>
+
+    <h4>Profile Info</h4>
+      <p> <b>User Name: </b><%= "#{@user.first_name} #{@user.last_name}" %> </p>
+      <p> <b>User Email: </b><%= @user.email %> </p>
+
+      <p><%= link_to "Edit My Account", edit_user_path(@user)%></p>
+      <button class="ui black button"><%= button_to "Delete My Account", user_path(@user), method: "delete"%></button>
 
 </body>

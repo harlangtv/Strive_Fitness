@@ -25,6 +25,7 @@ def create
 end
 
 def show
+  @categories = Category.all
 end
 
 def edit
@@ -52,7 +53,7 @@ def set_goal
 end
 
 def goal_params
-  params.require(:goal).permit(:goal_name, :user_id, :frequency, :duration)
+  params.require(:goal).permit(:goal_name, :user_id, :frequency, :duration, :category_name)
 end
 
 end

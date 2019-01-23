@@ -5,16 +5,23 @@
 <%end%>
 <%end%>
 
+<h3>Choose a category</h3>
+
+
 <body>
 <p><%= form_for @goal do |f| %></p>
+<!-- enter a collection select here  -->
 <p><%= f.label "Goal Name" %></p>
 <p><%= f.text_area :goal_name %></p>
+<!-- automatically assign this goal a user_id ( user who is logged in, trying to make new goal)  -->
 <p><%= f.label "User Id" %></p>
 <p><%= f.text_field :user_id %></p>
+<!-- automatically assign this goal a user_id ( user who is logged in, trying to make new goal)  -->
 <p><%= f.label "Frequency" %></p>
 <p><%= f.select :frequency, [['Daily', 1], ['Weekly', 2], ['Monthly', 3]]%>
-<p><%= f.label "Duration" %></p>
+<p><%= f.label "Duration - (minutes)" %></p>
 <p><%= f.text_field :duration %></p>
+
 <p><%= f.submit %></p>
 <%end%>
 </body>

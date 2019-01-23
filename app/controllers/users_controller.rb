@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   # before_action :require_login
 
-
     def index
       @users = User.all
       # return head(:forbidden) unless session.include? :user_id
@@ -24,7 +23,7 @@ class UsersController < ApplicationController
       else
        flash[:errors] = @user.errors.full_messages
        flash[:data] = user_params
-       redirect_to new_user_path
+       redirect_to login_path
       end
     end
 
@@ -62,8 +61,8 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :photo)
     end
 
-    def require_login
-       return head(:forbidden) unless session.include? :user_id
-     end
+    # def require_login
+    #    return head(:forbidden) unless session.include? :user_id
+    # end
 
 end

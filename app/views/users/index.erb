@@ -1,13 +1,9 @@
 <h1> Users </h1>
 
-
   <body>
-  <p> <% @users.each do |user|%> </p>
-  <p><b>User:</b> <%= link_to "#{user.first_name} #{user.last_name}", user %> </p>
+    <p> <% @users.each do |user|%> </p>
+    <p><b>User:</b> <%= link_to "#{user.first_name} #{user.last_name}", user %> </p>
+    <%end%><br>
 
-
-  <%end%><br>
-
-  <p> <%= link_to "Make a new user", new_user_path %> </p>
-
+    <p> <%= link_to "Sign Up Now!", signup_path %> </p>
   </body>

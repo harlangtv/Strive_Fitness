@@ -13,8 +13,8 @@
 
 
 Category.create(goal_type:"Flexibility")
-Category.create(goal_type:"Strength")
-Category.create(goal_type:"Core")
+Category.create(goal_type:"Weight-Training")
+Category.create(goal_type:"Endurance")
 Category.create(goal_type:"Cardio")
 Category.create(goal_type:"Group_Fitness")
 
