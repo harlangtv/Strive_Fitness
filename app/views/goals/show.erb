@@ -3,7 +3,7 @@
   <body>
     <h2> <b>Goal: </b><%= @goal.goal_name%> </h2>
     <h4> <b>Goal Categories: </b><% @goal.categories.each do |c|%> </h4>
-    <li> <%= c.goal_type %><br></li>
+    <p><%= c.goal_type %></p>
     <%end%>
 
     <h4>To accomplish this goal you must complete the following: </h4>
@@ -12,7 +12,11 @@
     <%end%>
  </body>
 
+  <h4>Work towards your goal, schedule a workout below!</h4>
+  <p><%= link_to "Schedule a task", new_task_path%></p>
+
+
+
   <p><%= link_to "Edit Goal", edit_goal_path(@goal)%></p>
-  <p><%= link_to "See your Goals", goals_path%></p>
-  <p><%= link_to "Home Page", users_path(@user)  %></p>
+  <p><%= link_to "Go back to your goals", user_path %></p>
   <button class="ui black button"><%= button_to "Delete Goal", goal_path(@goal), method: "delete"%></button>

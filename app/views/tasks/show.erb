@@ -1,11 +1,11 @@
 <h1>About this Task</h1>
   <body>
-  <p> <b>Task: </b><%=link_to @task.task_name, @task %> </p>
+  <p> <b>Task: </b><%= @task.task_name %> </p>
   <p> <b>Date:<b> <%= @task.date.strftime("%b %d, %Y")%> </p>
   <p> <b>Completed? </b>: <%= @task.completed%> </p>
 
   <p><%= link_to "Edit Task", edit_task_path(@task)%></p>
-  <p><%= link_to "Go Back", tasks_path%></p>
+  <p><%= link_to "Go Back", user_path%></p>
   <button class="ui black button"><%= button_to "Delete Task", task_path(@task), method: "delete"%></button>
 
 </body>
