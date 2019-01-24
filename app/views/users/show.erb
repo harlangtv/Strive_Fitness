@@ -1,4 +1,4 @@
-<h1>Welcome back <%= @user.first_name %> </h1>
+<h1 class = "welcome" >Welcome back <%= @user.first_name %> </h1>
 
   <body>
 
@@ -7,16 +7,21 @@
       <ul><li><%=link_to g.goal_name, g %></li></ul>
       <%end%><br>
 
-
+      <div id = "calendar">
+      <%= week_calendar number_of_weeks: 1 do |date| %>
+        <%= date %>
+      <% end %>
+      </div>
 
 <!-- Show the user their tasks-->
   <p><%= link_to "Make a new goal!", new_goal_path(@user) %></p><hr>
 
-  <h4>Profile Info</h4>
-  <p> <b>User Name: </b><%= "#{@user.first_name} #{@user.last_name}" %> </p>
-  <p> <b>User Email: </b><%= @user.email %> </p>
+  <div class = "profile">
+    <h4>Profile Info</h4>
+    <p> <b>User Name: </b><%= "#{@user.first_name} #{@user.last_name}" %> </p>
+    <p> <b>User Email: </b><%= @user.email %> </p>
 
-  <p><%= link_to "Edit My Account", edit_user_path(@user)%></p>
-  <button class="ui black button"><%= button_to "Delete My Account", user_path(@user), method: "delete"%></button>
-
+    <p><%= link_to "Edit My Account", edit_user_path(@user)%></p>
+    <button class="ui black button"><%= button_to "Delete My Account", user_path(@user), method: "delete"%></button>
+  </div>
 </body>

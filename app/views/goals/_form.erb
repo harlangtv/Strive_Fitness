@@ -9,9 +9,9 @@
 
 
   <body>
+    <div class="form-group">
     <p><%= form_for @goal do |f| %></p>
-    <!-- enter a collection select here  -->
-    <div class="field">
+    <div class="field form-group">
       <%= f.label "Category" %><br />
       <%= f.collection_check_boxes :category_ids, Category.all, :id, :goal_type do |b| %>
         <div class="collection-check-box">
@@ -22,14 +22,13 @@
     </div>
     <p><%= f.label "Goal Name" %></p>
     <p><%= f.text_area :goal_name %></p>
-    <!-- automatically assign this goal a user_id ( user who is logged in, trying to make new goal)  -->
     <p><%= f.label "User Name" %></p>
     <p><%= f.collection_select :user_id, User.all, :id, :full_name%></p>
-    <!-- automatically assign this goal a user_id ( user who is logged in, trying to make new goal)  -->
-    <p><%= f.label "Times per weeek" %></p>
+    <p><%= f.label "Times per week" %></p>
     <p><%= f.text_field :frequency%>
     <p><%= f.label "Duration - (minutes)" %></p>
     <p><%= f.text_field :duration %></p>
     <p><%= f.submit %></p>
     <%end%>
+    </div>
   </body>

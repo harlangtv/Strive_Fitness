@@ -7,7 +7,7 @@
 
 <body>
 <p><%= form_for @task do |f| %></p>
-<p><%= f.label :task_name %></p>
+<p><%= f.label "Workout Name" %></p>
 <p><%= f.text_area :task_name %></p>
 <p><%= f.label "Select Goal" %></p>
 <p><%= f.collection_select :goal_id , @goals, :id , :goal_name %></p>
