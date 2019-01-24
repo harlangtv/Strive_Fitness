@@ -14,7 +14,7 @@
  *= require_self
  */
 
-*= require simple_calendar
+
 
 .strive {
   background-color: black;
@@ -29,3 +29,5 @@
 .profile{
   color: grey;
 }
+
+*= require simple_calendar
