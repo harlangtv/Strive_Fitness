@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-  resources :tasks
-  resources :goal_categories
-  resources :categories
-  resources :goals
-  resources :users, except:[:new]
+  resources :tasks  # new create show delete edit update tasks
 
-get    '/login',   to: 'sessions#new'
-post   '/login',   to: 'sessions#create'
-delete '/logout',  to: 'sessions#destroy'
-
-get '/signup', to: 'users#new'
+  resources :goals   # new create show delete edit update goals
+  resources :users
 
 get '/', to: 'sessions#new'
-
+get '/login', to: 'sessions#new'
+post '/login', to: 'sessions#create'
+get '/signup', to: 'users#new'
+delete '/logout', to: 'sessions#destroy'
 
 end
+
+# Not needed:
+# resources :goal_categories
+# resources :categories

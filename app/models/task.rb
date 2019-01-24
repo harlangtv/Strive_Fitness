@@ -3,4 +3,7 @@ class Task < ApplicationRecord
 
   validates :date, :task_name, :duration, presence: true
 
+
+
+
 end

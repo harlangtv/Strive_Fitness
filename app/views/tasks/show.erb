@@ -5,7 +5,7 @@
   <p> <b>Completed? </b>: <%= @task.completed%> </p>
 
   <p><%= link_to "Edit Task", edit_task_path(@task)%></p>
-  <p><%= link_to "Go Back", user_path%></p>
+  <p><%= link_to "Go Back", user_path(@user) %></p>
   <button class="ui black button"><%= button_to "Delete Task", task_path(@task), method: "delete"%></button>
 
 </body>

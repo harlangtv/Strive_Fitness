@@ -2,8 +2,8 @@ class User < ApplicationRecord
   has_many :goals
   has_many :tasks, through: :goals
 
-  validates :name, presence: true
-  validates :email, uniqeness: true
+  validates :first_name, :last_name, presence: true
+  validates :email, uniqueness: true
 
   has_secure_password
 
@@ -21,6 +21,8 @@ class User < ApplicationRecord
     task_item = task_info.each {|i| puts "Task Name: #{i[0]}, Task Date: #{i[1].strftime("%b %d, %Y")}"}
     # task item is the individual task - task_name, task_date
   end
+
+
 
 
 end

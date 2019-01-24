@@ -23,6 +23,7 @@ class TasksController < ApplicationController
 
   def show
     @goals = Goal.all
+    @user = @task.goal.user
   end
 
   def edit

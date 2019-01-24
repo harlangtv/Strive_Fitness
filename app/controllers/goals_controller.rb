@@ -1,12 +1,17 @@
 class GoalsController < ApplicationController
     before_action :set_goal, only: [:show, :edit, :update, :destroy]
 
+    before_action :authorized
+
   def index
-    @goals = Goal.all
+    if logged_in?
+      @goals = current_user.goals
+    else
+      @goals = Goal.all
+    end
   end
-  # trying to figure out association of goal and user
+
   def new
-    # @user = User.find_by_id(params[:id])
     if !!flash[:data]
       @goal = Goal.new(flash[:data])
     else

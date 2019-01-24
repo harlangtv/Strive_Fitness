@@ -4,5 +4,5 @@ class Category < ApplicationRecord
   def goal_count
     self.goals.count
   end
-  
+
 end

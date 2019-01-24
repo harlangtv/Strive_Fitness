@@ -3,8 +3,8 @@ class Goal < ApplicationRecord
   has_and_belongs_to_many :categories
   belongs_to :user
 
-  validates :name , presence: true
-  validates :name , uniqeness: true
+  validates :goal_name , presence: true
+  validates :goal_name , uniqueness: true
 
   def goal_tasks
     puts self.tasks
