@@ -12,11 +12,7 @@ class GoalsController < ApplicationController
   end
 
   def new
-    if !!flash[:data]
-      @goal = Goal.new(flash[:data])
-    else
-      @goal = Goal.new
-    end
+    @goal = Goal.new
   end
 
   def create
