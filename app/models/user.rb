@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :tasks, through: :goals
 
   validates :first_name, :last_name, presence: true
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, presence: true
 
   has_secure_password
 
