@@ -1,17 +1,20 @@
 <h1 class = "strive" >STRIVE</h1>
 
-<% provide(:title, "Log in") %>
+<div class="imgbackground">
+
+</div>
+
 <body>
 <h3>Log in</h3>
-
 <div class="row">
     <%= form_tag login_path do %>
-      <%= label_tag "E-mail" %>
-      <%= email_field_tag :email %>
-      <%= label_tag "Password" %>
-      <%= password_field_tag :password %>
-      <%= submit_tag "Log in" %>
+      <p><%= label_tag "E-mail" %></p>
+      <p><%= email_field_tag :email %></p>
+      <p><b><%= label_tag "Password" %></b></p>
+      <p><%= password_field_tag :password %></p>
+      <p><button type="button" class="btn btn-dark"> <%= submit_tag "Log in" %></button></p>
     <% end %><br>
-    
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
 </div>
+<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+
+</body>

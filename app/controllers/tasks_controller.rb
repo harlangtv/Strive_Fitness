@@ -1,13 +1,15 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :authorized
+
+  # before_action :authorized
 
   def index
     @tasks = Task.all
   end
 
   def new
-    @goals = Goal.all
+    @user = User.find(session[:user_id])
+    @goals = @user.goals
     @task = Task.new
   end
 
@@ -43,7 +45,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to tasks_path
+    redirect_to user_path(@task.goal.user)
   end
 
   private

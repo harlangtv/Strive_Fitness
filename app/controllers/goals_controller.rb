@@ -1,14 +1,9 @@
 class GoalsController < ApplicationController
     before_action :set_goal, only: [:show, :edit, :update, :destroy]
-
-    before_action :authorized
+    # before_action :authorized
 
   def index
-    if logged_in?
       @goals = current_user.goals
-    else
-      @goals = Goal.all
-    end
   end
 
   def new
@@ -16,11 +11,12 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @user = User.find_by_id(params[:id])
-    @goal= Goal.create(goal_params)
-
-   # byebug
+    # updated the create method to give a user id based on sessions
+    @user = User.find(session[:user_id])
+    @goal= Goal.new(goal_params)
+    @goal.user_id = @user.id
     if @goal.valid?
+    @goal.save
      redirect_to goal_path(@goal)
     else
      flash[:errors] = @goal.errors.full_messages
@@ -57,7 +53,7 @@ class GoalsController < ApplicationController
   end
 
   def goal_params
-    params.require(:goal).permit(:goal_name, :user_id, :frequency, :duration, :category_name, category_ids: [])
+    params.require(:goal).permit(:goal_name, :frequency, :duration, :category_name, category_ids: [])
   end
 
 end

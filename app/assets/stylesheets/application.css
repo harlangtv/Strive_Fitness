@@ -4,15 +4,31 @@
 .strive {
   background-color: black;
   color: yellow;
+  padding : 10px;
 }
 
 .welcome{
-  background-color: yellow;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 .profile{
-  color: grey;
+
+}
+
+.workout{
+  background-color: yellow;
+  color: black;
+  padding : 10px;
+}
+.user{
+  background-color: #E5E2E1
+}
+
+.row{
+  background-color: #E5E2E1;
+  padding : 20px;
+  border: solid black 10px;
 }
 
 *= require simple_calendar

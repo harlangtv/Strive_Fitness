@@ -22,8 +22,6 @@
     </div>
     <p><%= f.label "Goal Name" %></p>
     <p><%= f.text_area :goal_name %></p>
-    <p><%= f.label "User Name" %></p>
-    <p><%= f.collection_select :user_id, User.all, :id, :full_name%></p>
     <p><%= f.label "Times per week" %></p>
     <p><%= f.text_field :frequency%>
     <p><%= f.label "Duration - (minutes)" %></p>
