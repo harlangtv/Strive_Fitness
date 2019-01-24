@@ -1,24 +1,32 @@
-<h1 class = "welcome" >Welcome back <%= @user.first_name %> </h1>
+
+  <h1 class = "welcome" >Welcome back <%= @user.first_name %> </h1>
 
   <body>
-
     <h3> Your Fitness Goals </h3>
-      <%@user.goals.each do |g|%>
-      <ul><li><%=link_to g.goal_name, g %></li></ul>
-      <%end%><br>
+    <%@user.goals.each do |g|%>
+    <ul><li><%=link_to g.goal_name, g %></li></ul>
+    <%end%>
 
-      <div id = "calendar">
-      <%= week_calendar users: @tasks do |date, tasks| %>
-        <%= date %>
-        <%tasks.each do |task| %>
-        <div>
-          <%=task.task_name%>
-        </div>
-      <% end %>
-      <% end %>
-
-<!-- Show the user their tasks on calendar -->
   <p><%= link_to "Make a new goal!", new_goal_path(@user) %></p><hr>
+
+<!-- Show the user their tasks  -->
+  <h5><u>Upcoming Workouts</u></h5>
+
+  <%@user.user_task_info.each do |task|%>
+  <li><%= "#{task[1]}: #{task[0].strftime("%b %d, %Y")}" %></li>
+  <% end %><br>
+
+<!-- displays week_calendar -->
+  <div id = "calendar">
+  <%= week_calendar users: @tasks do |date, tasks| %>
+    <%= date %>
+    <%tasks.each do |task| %>
+    <div>
+      <%=task.task_name%>
+    </div>
+  <% end %>
+  <% end %>
+  </div>
 
   <div class = "profile">
     <h4>Profile Info</h4>

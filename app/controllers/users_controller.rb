@@ -26,7 +26,6 @@ class UsersController < ApplicationController
 
     def show
       @goals = Goal.all
-      # authorize
     end
 
     def edit

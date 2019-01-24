@@ -16,10 +16,9 @@ class User < ApplicationRecord
   end
 
   def user_task_info
-    task_info = self.tasks.map {|t| [t.task_name, t.date]}
-    #this returns an array of task arrays for the specified user
-    task_item = task_info.each {|i| puts "Task Name: #{i[0]}, Task Date: #{i[1].strftime("%b %d, %Y")}"}
-    # task item is the individual task - task_name, task_date
+    task_info = self.tasks.map {|t| [t.date, t.task_name]}
+    task_info.sort
+    #this returns an array of task arrays for the specified user sorted by date
   end
 
 
