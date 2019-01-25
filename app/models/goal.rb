@@ -4,7 +4,6 @@ class Goal < ApplicationRecord
   belongs_to :user
 
   validates :goal_name , presence: true
-  validates :goal_name , uniqueness: true
 
   def goal_tasks
     puts self.tasks

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   resources :tasks  # new create show delete edit update tasks
 
-  resources :goals   # new create show delete edit update goals
+  resources :goals
   resources :users
 
 get '/', to: 'sessions#new'

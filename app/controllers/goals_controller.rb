@@ -17,7 +17,7 @@ class GoalsController < ApplicationController
     @goal.user_id = @user.id
     if @goal.valid?
     @goal.save
-     redirect_to goal_path(@goal)
+     redirect_to user_path(@goal.user)
     else
      flash[:errors] = @goal.errors.full_messages
      flash[:data] = goal_params

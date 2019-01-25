@@ -1,4 +1,36 @@
-  <h1 class = "strive" >STRIVE</h1><br>
+  <html class= "usershow">
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+
+    <style>
+      a{
+        color:white;
+      }
+      body{
+        background-color:black;
+        color:white;
+        opacity: .8;
+        padding-left: 5%;
+        padding-right: 30%;
+        font-family: 'Fjalla One', sans-serif;
+        letter-spacing: .5px;
+        position: relative;
+        top: 5px;
+        bottom:60px;
+        right:100px;
+        left:20px;
+        font-size: 25px;
+      }
+      span{
+        font-size: 80px;
+        background-color:black;
+      }
+    </style>
+  </head>
+
+  <br><span id = "strive" >STRIVE</span><br>
 
   <body>
 
@@ -21,3 +53,4 @@
   <p><%= link_to "Edit Goal", edit_goal_path(@goal)%></p>
   <p><%= link_to "Go back to your goals", user_path %></p>
   <button class="ui black button"><%= button_to "Delete Goal", goal_path(@goal), method: "delete"%></button>
+  </html>
