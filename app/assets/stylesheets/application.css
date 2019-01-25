@@ -1,25 +1,21 @@
-.strive {
+#strive {
   background-color: black;
   color: white;
   padding : 15px;
-  font-family: 'Faster One', cursive;
+  font-family: 'Faster One';
 }
 
 .welcome{
-  background-color: black;
   color: white;
+  padding:0px;
 }
 
-.workout{
-  background-color: yellow;
-  color: black;
-  padding : 10px;
-}
 .user{
-  background-color: #E5E2E1
+  /* background-color: #E5E2E1; */
+  padding-left: 10px;
 }
 .row{
-  display: block;
+  /* display: block; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -31,4 +27,23 @@
   padding-right: 80%;
   padding-bottom: 100px;
   padding-left: 20px;
+}
+
+.profile{
+  padding-left: 20px;
+}
+.usershow{
+  background-image: url("https://cdn.wallpapersafari.com/98/7/dOBCZa.jpg");
+  background-position: center;
+  padding-top: 3%;
+  padding-right: 5%;
+  padding-bottom: 100px;
+  padding-left: 1px;
+  width:100%;
+  height:100%;
+}
+
+#usergoals{
+  padding-left: 20px;
+  margin-bottom: 10px;
 }

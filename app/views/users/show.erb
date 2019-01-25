@@ -1,27 +1,59 @@
+<html class= "usershow">
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+
+      <style>
+          body{
+              font-family: 'Fjalla One', sans-serif;
+              letter-spacing: .5px;
+              position: relative;
+              top: 5px;
+              bottom:60px;
+              right:100px;
+              left:20px;
+              color:white;
+              font-size: 30px;
+            }
+          a{
+            color:white;
+          }
+      </style>
+  </head>
+
+  <!--USER GOAL INFO -->
+
+  <h1 id = "strive" >STRIVE</h1>
+  <h1 class = "welcome" >Welcome back, <%= @user.first_name %> </h1>
   <div class="user">
-    <h1 class = "welcome" >Welcome back <%= @user.first_name %> </h1>
-    <body>
-      <h3> Your Fitness Goals </h3>
-      <%@user.goals.each do |g|%>
-      <ul><li><%=link_to g.goal_name, g %></li></ul>
-      <%end%>
-    <p><%= link_to "Make a new goal!", new_goal_path(@user) %></p><hr>
+      <body>
+        <h3> Your Fitness Goals </h3>
+        <%@user.goals.each do |g|%>
+        <ul><li><%=link_to g.goal_name, g %></li></ul>
+        <%end%>
+      <p><%= link_to "Make a new goal!", new_goal_path(@user) %></p><hr>
   </div>
 
-<!-- Show the user their tasks  -->
+  <!--USER GOAL INFO -->
 
-  <h5 class= "workout">Upcoming Workouts</h5>
-
-  <%@user.user_task_info.each do |task|%>
-  <li><%= "#{task[1]}: #{task[0].strftime("%b %d, %Y")}" %></li>
-  <% end %><hr>
-
-  <div class = "profile">
-    <h4>Profile Info</h4>
-    <p> <b>User Name: </b><%= "#{@user.first_name} #{@user.last_name}" %> </p>
-    <p> <b>User Email: </b><%= @user.email %> </p>
-
-    <p><%= link_to "Edit My Account", edit_user_path(@user)%></p>
-    <button class="ui black button"><%= button_to "Delete My Account", user_path(@user), method: "delete"%></button>
+  <div id="usergoals">
+    <h5>Upcoming Workouts</h5>
+      <%@user.user_task_info.each do |task|%>
+      <li><%= "#{task[1]}: #{task[0].strftime("%b %d, %Y")}" %></li>
+      <% end %><hr>
   </div>
-</body>
+
+  <!--PROFILE INFO -->
+
+    <div class = "profile">
+      <h4>Profile Info</h4>
+      <p> <b>User Name: </b><%= "#{@user.first_name} #{@user.last_name}" %> </p>
+      <p> <b>User Email: </b><%= @user.email %> </p>
+
+      <p><%= link_to "Edit My Account", edit_user_path(@user)%></p>
+      <button class="ui black button"><%= button_to "Delete My Account", user_path(@user), method: "delete"%></button>
+    </div>
+
+  </body>
+</html>
