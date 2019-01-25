@@ -4,23 +4,35 @@
     <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cantarell:400i" rel="stylesheet">
     <style>
-      h5 {
-        color: white;
-        background-color: black;
-         }
+      a{
+        color:white;
+        font-size: 10px;
+      }
+      p{
+        font-size: 20px;
+      }
       body{
         color: white;
         background-color: black;
       }
+      span{
+        font-size: 60px;
+        opacity: .9;
+      }
+      h4{
+        font-size: 40px;
+        opacity: .9;
+        font-family: 'Cantarell', sans-serif;
+      }
     </style>
     </head>
-  <h1 class = "strive" >STRIVE</h1>
+  <span id = "strive" >STRIVE</span>
 
   <div class="login">
-    <h5>READY, SET, GOAL</h5>
     <body>
-        <div class="row" "form-group">
+          <h4>READY... SET... GOAL!</h4>
           <%= form_tag login_path do %><br>
             <p><b><%= label_tag "E-mail" %></b></p>
             <p><%= email_field_tag :email %></p>
@@ -28,7 +40,6 @@
             <p><%= password_field_tag :password %></p>
             <p><button type="button" class="btn btn-dark"> <%= submit_tag "Log in" %></button></p>
           <% end %><br>
-        </div>
       <h5>New user? <%= link_to "Sign up now!", signup_path %></h5>
 
     </body>

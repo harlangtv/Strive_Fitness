@@ -33,7 +33,7 @@ class GoalsController < ApplicationController
 
   def update
     if @goal.update(goal_params)
-     redirect_to goal_path(@goal.user)
+     redirect_to user_path(@goal.user)
     else
      flash[:errors] = @goal.errors.full_messages
      flash[:data] = goal_params
