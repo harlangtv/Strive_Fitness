@@ -14,18 +14,23 @@
               right:100px;
               left:20px;
               color:white;
-              font-size: 30px;
+              font-size: 25px;
             }
           a{
             color:white;
+          }
+          span{
+            font-size: 80px;
+            background-color:black;
           }
       </style>
   </head>
 
   <!--USER GOAL INFO -->
 
-  <h1 id = "strive" >STRIVE</h1>
-  <h1 class = "welcome" >Welcome back, <%= @user.first_name %> </h1>
+  <br><span id = "strive" >STRIVE</span><br>
+
+  <h2 class = "welcome" >Welcome back, <%= @user.first_name %>! </h2><br>
   <div class="user">
       <body>
         <h3> Your Fitness Goals </h3>
@@ -38,7 +43,7 @@
   <!--USER GOAL INFO -->
 
   <div id="usergoals">
-    <h5>Upcoming Workouts</h5>
+    <h3>Upcoming Workouts</h3>
       <%@user.user_task_info.each do |task|%>
       <li><%= "#{task[1]}: #{task[0].strftime("%b %d, %Y")}" %></li>
       <% end %><hr>
