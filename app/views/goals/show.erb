@@ -1,50 +1,47 @@
   <html class= "usershow">
 
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <head>
+      <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
 
-    <style>
-      a{
-        color:white;
-      }
-      body{
-        background-color:black;
-        color:white;
-        opacity: .8;
-        padding-left: 5%;
-        padding-right: 30%;
-        font-family: 'Fjalla One', sans-serif;
-        letter-spacing: .5px;
-        position: relative;
-        top: 5px;
-        bottom:60px;
-        right:100px;
-        left:20px;
-        font-size: 25px;
-      }
-      span{
-        font-size: 80px;
-        background-color:black;
-      }
-    </style>
-  </head>
+      <style>
+        a{
+          color:white;
+        }
+        body{
+          background-color:black;
+          color:white;
+          opacity: .8;
+          padding-left: 5%;
+          padding-right: 30%;
+          font-family: 'Fjalla One', sans-serif;
+          letter-spacing: .5px;
+          position: relative;
+          top: 5px;
+          bottom:60px;
+          right:100px;
+          left:20px;
+          font-size: 25px;
+        }
+        span{
+          font-size: 80px;
+          background-color:black;
+        }
+      </style>
+    </head>
 
   <br><span id = "strive" >STRIVE</span><br>
 
   <body>
-
-    <h3> <b>Goal: </b><%= @goal.goal_name%> </h3><br>
+    <h3> <b>Goal: </b><%= @goal.goal_name%> </h3>
     <h5>Goal Categories:<% @goal.categories.each do |c|%></h5>
     <li><%=c.goal_type %></li>
-    <%end%><br>
+    <%end%><hr>
 
     <h5>To accomplish this goal you must complete the following: </h5>
     <%@goal.tasks.each do |task|%>
     <li> <%=link_to task.task_name.capitalize, task %><br></li>
-    <%end%><br>
-
-
+    <%end%>
 
     <h5>Schedule a workout below!</h5>
     <p><%= link_to "Schedule a workout", new_task_path%></p>
