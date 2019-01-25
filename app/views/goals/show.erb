@@ -48,6 +48,6 @@
   </body>
   <hr>
   <p><%= link_to "Edit Goal", edit_goal_path(@goal)%></p>
-  <p><%= link_to "Go back to your goals", user_path %></p>
+  <p><%= link_to "Go back to your goals", user_path(@goal.user) %></p>
   <button class="ui black button"><%= button_to "Delete Goal", goal_path(@goal), method: "delete"%></button>
   </html>
