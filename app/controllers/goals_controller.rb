@@ -1,6 +1,5 @@
 class GoalsController < ApplicationController
     before_action :set_goal, only: [:show, :edit, :update, :destroy]
-    # before_action :authorized
 
   def index
       @goals = current_user.goals
@@ -11,17 +10,16 @@ class GoalsController < ApplicationController
   end
 
   def create
-    # updated the create method to give a user id based on sessions
     @user = User.find(session[:user_id])
     @goal= Goal.new(goal_params)
     @goal.user_id = @user.id
     if @goal.valid?
-    @goal.save
-     redirect_to user_path(@goal.user)
+      @goal.save
+      redirect_to user_path(@goal.user)
     else
-     flash[:errors] = @goal.errors.full_messages
-     flash[:data] = goal_params
-     redirect_to new_goal_path
+      flash[:errors] = @goal.errors.full_messages
+      flash[:data] = goal_params
+      redirect_to new_goal_path
     end
   end
 
