@@ -1,19 +1,13 @@
-
-
-
 .strive {
   background-color: black;
-  color: yellow;
-  padding : 10px;
+  color: white;
+  padding : 15px;
+  font-family: 'Faster One', cursive;
 }
 
 .welcome{
   background-color: black;
   color: white;
-}
-
-.profile{
-
 }
 
 .workout{
@@ -24,11 +18,17 @@
 .user{
   background-color: #E5E2E1
 }
-
 .row{
-  background-color: #E5E2E1;
-  padding : 20px;
-  border: solid black 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-*= require simple_calendar
+.log{
+  background-image: url("https://www.bodyx.com/fitness/wp-content/uploads/2015/05/bodyx-fitness-background-v2.jpg");
+  color:black;
+  padding-top: 10px;
+  padding-right: 80%;
+  padding-bottom: 100px;
+  padding-left: 20px;
+}
