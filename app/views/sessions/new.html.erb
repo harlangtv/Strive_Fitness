@@ -26,6 +26,12 @@
         opacity: .9;
         font-family: 'Cantarell', sans-serif;
       }
+      h6{
+        font-size: 25px;
+        margin-top: 2px;
+        font-family: 'Cantarell', sans-serif;
+
+      }
     </style>
     </head>
   <span id = "strive" >STRIVE</span>
@@ -33,6 +39,7 @@
   <div class="login">
     <body>
           <h4>READY... SET... GOAL!</h4>
+          <h6> Track your fitness goals all in one place.</h6>
           <%= form_tag login_path do %><br>
             <p><b><%= label_tag "E-mail" %></b></p>
             <p><%= email_field_tag :email %></p>
