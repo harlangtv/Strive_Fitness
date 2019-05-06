@@ -1,0 +1,55 @@
+<html class = "log" >
+<div id= "login_page">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cantarell:400i" rel="stylesheet">
+    <style>
+      a{
+        color:white;
+        font-size: 10px;
+      }
+      p{
+        font-size: 20px;
+      }
+      body{
+        color: white;
+        background-color: black;
+      }
+      span{
+        font-size: 60px;
+        opacity: .9;
+      }
+      h4{
+        font-size: 40px;
+        opacity: .9;
+        font-family: 'Cantarell', sans-serif;
+      }
+      h6{
+        font-size: 25px;
+        margin-top: 2px;
+        font-family: 'Cantarell', sans-serif;
+
+      }
+    </style>
+    </head>
+  <span id = "strive" >STRIVE</span>
+
+  <div class="login">
+    <body>
+          <h4>READY... SET... GOAL!</h4>
+          <h6> Track your fitness goals all in one place.</h6>
+          <%= form_tag login_path do %><br>
+            <p><b><%= label_tag "E-mail" %></b></p>
+            <p><%= email_field_tag :email %></p>
+            <p><b><%= label_tag "Password" %></b></p>
+            <p><%= password_field_tag :password %></p>
+            <p><button type="button" class="btn btn-dark"> <%= submit_tag "Log in" %></button></p>
+          <% end %><br>
+      <h5>New user? <%= link_to "Sign up now!", signup_path %></h5>
+
+    </body>
+  </div>
+</div>
+</html>

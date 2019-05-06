@@ -4,12 +4,17 @@
     <title>Strive</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
+  <h7>
+    <% if logged_in? %>
+      <%= link_to "Logout", logout_path, method: :delete %>
+    <% end %>
     <%= yield %>
+  </h7>
+  <body>
+
   </body>
+
 </html>

@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
-  resources :tasks
-  resources :goal_categories
-  resources :categories
+  get 'sessions/new'
+  resources :tasks  # new create show delete edit update tasks
+
   resources :goals
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+get '/', to: 'sessions#new'
+get '/login', to: 'sessions#new'
+post '/login', to: 'sessions#create'
+get '/signup', to: 'users#new'
+delete '/logout', to: 'sessions#destroy'
+
 end
+
+# Not needed:
+# resources :goal_categories
+# resources :categories

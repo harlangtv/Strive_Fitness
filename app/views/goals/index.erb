@@ -1,0 +1,11 @@
+
+<h1>Your Goals</h1>
+  <body>
+  <p> <% @goals.each do |goal|%> </p>
+  <p><b>Goal:</b> <%= link_to goal.goal_name, goal %> </p>
+  <%end%><br>
+  <p> <%= link_to "Make a new goal", new_goal_path %> </p>
+
+  <p> <%= link_to "See users", users_path %> </p>
+
+</body>

@@ -1,0 +1,65 @@
+<html class= "usershow">
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+
+      <style>
+          body{
+              font-family: 'Fjalla One', sans-serif;
+              letter-spacing: .5px;
+              position: relative;
+              top: 5px;
+              bottom:60px;
+              right:100px;
+              left:20px;
+              color:white;
+              font-size: 25px;
+            }
+          a{
+            color:white;
+          }
+          span{
+            font-size: 80px;
+            background-color:black;
+          }
+      </style>
+  </head>
+
+  <!--USER GOAL INFO -->
+
+  <br><span id = "strive" >STRIVE</span><br>
+
+  <h2 class = "welcome" >Welcome back, <%= @user.first_name %>! </h2><br>
+  <div class="user">
+      <body>
+        <h3> Your Fitness Goals </h3>
+        <%@user.goals.each do |g|%>
+        <ul><li><%=link_to g.goal_name, g %></li></ul>
+        <%end%>
+      <p><%= link_to "Make a new goal!", new_goal_path(@user) %></p><hr>
+  </div>
+
+  <!--USER GOAL INFO -->
+
+  <div id="usergoals">
+    <h3>Upcoming Workouts</h3>
+      <%@user.user_task_info.each do |task|%>
+      <li><%= "#{task[1]}: #{task[0].strftime("%b %d, %Y")}" %></li>
+      <% end %><hr>
+  </div>
+
+  <!--PROFILE INFO -->
+
+    <div class = "profile">
+      <h4>Profile Info</h4>
+      <p> <b>User Name: </b><%= "#{@user.first_name} #{@user.last_name}" %> </p>
+      <p> <b>User Email: </b><%= @user.email %> </p>
+
+      <p><%= link_to "Edit My Account", edit_user_path(@user)%></p>
+      <button class="ui black button"><%= button_to "Delete My Account", user_path(@user), method: "delete"%></button>
+    </div><br>
+
+  </body><br>
+
+</html>

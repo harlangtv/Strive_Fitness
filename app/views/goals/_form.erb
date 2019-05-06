@@ -1,0 +1,32 @@
+
+  <% if !!flash[:errors]%>
+    <% flash[:errors].each do |error| %>
+    <p> <%= error %> </p>
+    <%end%>
+  <%end%>
+
+  <!-- @goal.categories << category -->
+
+
+  <body>
+    <div class="form-group">
+    <p><%= form_for @goal do |f| %></p>
+    <div class="field form-group">
+      <%= f.label "Category" %><br />
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :goal_type do |b| %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+    </div>
+    <p><%= f.label "Goal Name" %></p>
+    <p><%= f.text_area :goal_name %></p>
+    <p><%= f.label "Times per week" %></p>
+    <p><%= f.text_field :frequency%>
+    <p><%= f.label "Duration - (minutes)" %></p>
+    <p><%= f.text_field :duration %></p>
+    <p><%= f.submit %></p>
+    <%end%>
+    </div>
+  </body>

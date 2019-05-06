@@ -1,6 +1,16 @@
 class Goal < ApplicationRecord
   has_many :tasks
-  has_many :goal_categories
-  has_many :categories, through: :goal_categories
+  has_and_belongs_to_many :categories
   belongs_to :user
+
+  validates :goal_name , presence: true
+
+  def goal_tasks
+    puts self.tasks
+  end
+
+  def task_count
+    self.tasks.count
+  end
+
 end
